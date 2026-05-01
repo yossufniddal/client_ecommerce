@@ -1,0 +1,182 @@
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+}
+
+.searchContainer {
+  margin-bottom: var(--spacing-lg);
+}
+
+.sectionTitle {
+  font-size: 18px;
+  color: var(--color-text-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.seeAll {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.dealsSection {
+  margin-bottom: var(--spacing-lg);
+}
+
+.promoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.promoCard {
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-level-1);
+}
+
+.promoHarvest {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/bananas_1777488674452.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.promoDairy {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/milk_1777488688804.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.promoContent {
+  position: relative;
+  z-index: 10;
+  max-width: 80%;
+}
+
+.promoBadge {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.promoContent h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 4px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.promoContent p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.categoriesSection {
+  margin-bottom: var(--spacing-lg);
+}
+
+.categoryGrid {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-sm);
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.categoryGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.categoryIconBox {
+  width: 76px;
+  height: 76px;
+  background-color: var(--color-tertiary);
+  border-radius: 20px; /* Squircle appearance */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-secondary); /* Dark green stroke */
+}
+
+.categoryIconBox svg {
+  width: 32px;
+  height: 32px;
+}
+
+.categoryLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.popularSection {
+  margin-bottom: var(--spacing-lg);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Tablet & Desktop Layouts */
+@media (min-width: 768px) {
+  .promoList {
+    flex-direction: row;
+  }
+  
+  .promoCard {
+    flex: 1;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,58 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-level-1);
+}
+
+.icon {
+  position: absolute;
+  left: var(--spacing-md);
+  width: 20px;
+  height: 20px;
+  color: var(--color-neutral);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md) 44px var(--spacing-md) 44px;
+  border: 1px solid var(--color-neutral);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.2s ease;
+  background-color: transparent;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  border-width: 2px;
+  padding: calc(var(--spacing-md) - 1px) 43px calc(var(--spacing-md) - 1px) 43px;
+}
+
+.input::placeholder {
+  color: var(--color-neutral);
+}
+
+.filterBtn {
+  position: absolute;
+  right: var(--spacing-md);
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.filterBtn svg {
+  width: 18px;
+  height: 18px;
+}

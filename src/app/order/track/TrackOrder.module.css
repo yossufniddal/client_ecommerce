@@ -1,0 +1,454 @@
+.main {
+  min-height: 100vh;
+  background-color: #F8FAFC; /* Slate 50 */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px; /* Extra padding at bottom */
+}
+
+.container {
+  flex: 1;
+  max-width: 672px; /* max-w-2xl equivalent */
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  gap: var(--spacing-lg);
+}
+
+/* Common Card Style */
+.sectionCard {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: 24px; /* rounded-3xl */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+  font-size: 18px; /* title-sm */
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+/* Map Section */
+.mapSection {
+  position: relative;
+  height: 320px; /* h-80 */
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.mapImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Moped Animation Overlay */
+.mopedOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.mopedIconWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #22C55E; /* primary-container */
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Delivery Status Floating Card */
+.deliveryStatusCardWrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.deliveryStatusCard {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 16px;
+  border-radius: 16px; /* rounded-2xl */
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deliveryInfoRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clockIconWrapper {
+  background-color: rgba(34, 197, 94, 0.1); /* primary-container/10 */
+  padding: 8px;
+  border-radius: 12px;
+  color: #22C55E;
+}
+
+.deliveryLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #6B7280; /* gray-500 */
+  margin: 0 0 2px 0;
+}
+
+.deliveryTime {
+  font-size: 24px;
+  font-weight: 700;
+  color: #006E2F; /* primary */
+  margin: 0;
+  line-height: 1;
+}
+
+.truckIconWrapper {
+  color: #22C55E;
+}
+
+/* Delivery Status Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+.stepLast {
+  padding-bottom: 0;
+}
+
+/* Vertical Line */
+.step::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 24px;
+  bottom: -8px;
+  width: 2px;
+  background-color: #E5EEFF; /* surface-container */
+}
+
+.stepActive::before {
+  background-color: #22C55E;
+}
+
+.stepLast::before {
+  display: none;
+}
+
+.stepIconWrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.stepIconCompleted {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #22C55E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepIconCurrent {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  border: 4px solid #22C55E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepIconPulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22C55E;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+.stepIconPending {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #D3E4FE; /* surface-container-highest */
+}
+
+.stepContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stepTitle, .stepTitleActive, .stepTitlePending {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+
+.stepTitle { color: var(--color-text-primary); }
+.stepTitleActive { color: #22C55E; }
+.stepTitlePending { color: #9CA3AF; }
+
+.stepDesc, .stepDescActive, .stepDescPending {
+  font-size: 14px;
+  margin: 0;
+}
+
+.stepDesc { color: #6B7280; }
+.stepDescActive { color: #4B5563; }
+.stepDescPending { color: #9CA3AF; }
+
+.stepTime {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #9CA3AF;
+}
+
+.stepBadgeActive {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #22C55E;
+}
+
+.stepTimePending {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #D1D5DB;
+}
+
+/* Courier Card */
+.courierCard {
+  padding: 16px;
+  border: 1px solid #F0FDF4; /* green-50 */
+}
+
+.courierRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.courierInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.courierImageWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.courierImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.courierName {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 2px 0;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingScore {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.ratingCount {
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.chatButton, .callButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.chatButton:active, .callButton:active {
+  transform: scale(0.95);
+}
+
+.chatButton {
+  background-color: #E5EEFF; /* surface-container */
+  color: #22C55E;
+}
+
+.callButton {
+  background-color: #22C55E;
+  color: white;
+}
+
+/* Order Summary */
+.summaryCard {
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.summaryHeader {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F9FAFB;
+}
+
+.summaryHeader .sectionTitle {
+  margin: 0;
+}
+
+.itemCount {
+  font-size: 14px;
+  font-weight: 700;
+  color: #22C55E;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemRow {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #F9FAFB;
+}
+
+.itemRow:last-child {
+  border-bottom: none;
+}
+
+.itemImageWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background-color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 2px 0;
+}
+
+.itemMeta {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0;
+}
+
+.itemPrice {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.totalRow {
+  padding: 20px;
+  background-color: rgba(240, 253, 244, 0.5); /* green-50/50 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalLabel {
+  font-size: 16px;
+  color: #4B5563;
+}
+
+.totalPrice {
+  font-size: 24px;
+  font-weight: 700;
+  color: #006E2F; /* primary */
+}

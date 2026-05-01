@@ -1,0 +1,257 @@
+.main {
+  min-height: 100vh;
+  position: relative;
+  background-color: #F8FAFC; /* Slate 50 - Very light slate background */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px; /* Space for fixed bottom bar */
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  margin-top: 56px; /* Space for TopBar */
+  gap: var(--spacing-lg);
+}
+
+/* Map Card */
+.mapCard {
+  width: 100%;
+  height: 200px;
+  background-color: #4A5D4E; /* Dark olive green from design */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.mapPattern {
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(135deg, #A7F3D0 0%, #E6F4EA 100%);
+  position: relative;
+  border-left: 2px solid #334135;
+  border-right: 2px solid #334135;
+}
+
+/* Drawing fake map lines inside the pattern */
+.mapPattern::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255,255,255,0.6) 3px, transparent 3px),
+    linear-gradient(-45deg, rgba(255,255,255,0.6) 3px, transparent 3px);
+  background-size: 60px 60px;
+}
+
+.locationPill {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.locationPill svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Saved Addresses Section */
+.savedSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.addressList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.addressCard {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-md);
+  border: 1px solid #F1F5F9; /* Very faint gray border */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addressCardSelected {
+  border: 1px solid #22C55E; /* Bright green border */
+}
+
+/* Radio Button Styling */
+.radioWrapper {
+  padding-top: 2px;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #CBD5E1; /* Slate 300 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.radioSelected {
+  border-color: #064E3B; /* Very dark green */
+}
+
+.radioInner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #064E3B; /* Very dark green */
+}
+
+/* Address Info Styling */
+.addressInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.addressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addressType {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.defaultBadge {
+  background-color: #A7F3D0; /* Light green */
+  color: var(--color-primary);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.5px;
+}
+
+.editButton {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+}
+
+.editButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.addressText {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* Add New Address Button */
+.addAddressButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1.5px dashed #A7F3D0; /* Emerald 200 dashed border */
+  background-color: transparent;
+  color: #22C55E; /* Emerald 500 text */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+}
+
+.addAddressButton:hover {
+  background-color: rgba(167, 243, 208, 0.1);
+}
+
+.addAddressButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Bottom Action Bar */
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+.submitButton {
+  background-color: #22C55E; /* Bright green as per design */
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.1s ease;
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}
+
+.submitButton svg {
+  width: 20px;
+  height: 20px;
+}

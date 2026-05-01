@@ -1,0 +1,156 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.container {
+  padding: var(--spacing-md);
+}
+
+.searchContainer {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.sectionHeader .sectionTitle {
+  margin-bottom: 0;
+}
+
+.clearAll {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Category Grid Layout */
+.categoryGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.rowCards {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.rowCards .categoryCard {
+  flex: 1;
+  height: 120px;
+}
+
+.categoryCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-level-1);
+}
+
+.produceCard {
+  height: 180px;
+  background: url('/images/product_detail_design.png') center/cover; /* Placeholder */
+}
+
+.meatCard {
+  background: url('/images/bananas_1777488674452.png') center/cover; /* Placeholder */
+}
+
+.seafoodCard {
+  background: url('/images/apples_1777488660157.png') center/cover; /* Placeholder */
+}
+
+.frozenCard {
+  height: 100px;
+  background: url('/images/milk_1777488688804.png') center/cover; /* Placeholder */
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cardOverlay h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.organicBadge {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+}
+
+/* Trending Searches */
+.trendingPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.trendingPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.trendingPill svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-text-tertiary);
+}
+
+/* Recently Viewed Scroll */
+.recentlyViewedScroll {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-md);
+  scrollbar-width: none;
+  margin: 0 calc(-1 * var(--spacing-md));
+  padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+}
+
+.recentlyViewedScroll::-webkit-scrollbar {
+  display: none;
+}

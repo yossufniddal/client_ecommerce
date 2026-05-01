@@ -1,0 +1,124 @@
+.card {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.card:last-child {
+  border-bottom: none;
+}
+
+.imageContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-background);
+  flex-shrink: 0;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.deleteButton:hover {
+  color: #DC2626; /* Red on hover */
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-sm);
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  background-color: #EEF2FF; /* Light blue background as in design */
+  border-radius: var(--radius-pill);
+  padding: 2px 4px;
+}
+
+.qtyBtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.qtyBtn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.qtyText {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  min-width: 20px;
+  text-align: center;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}

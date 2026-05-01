@@ -1,0 +1,145 @@
+.container {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  margin-top: var(--spacing-lg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: #E6F4EA; /* Light green header from design */
+  padding: var(--spacing-md);
+  color: #064E3B; /* Very dark green */
+}
+
+.header svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header h2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.content {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.value {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.freeValue {
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(0,0,0,0.06);
+  margin: var(--spacing-sm) 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-md);
+}
+
+.totalTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.totalLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.totalValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.savedBadge {
+  background-color: #A7F3D0; /* Lighter green */
+  color: var(--color-primary); /* Darker green text */
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.checkoutButton {
+  background-color: #064E3B; /* Very dark green */
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(6, 78, 59, 0.2);
+  transition: transform 0.1s ease;
+}
+
+.checkoutButton:active {
+  transform: scale(0.98);
+}
+
+.checkoutButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.secureContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-tertiary);
+  margin-top: var(--spacing-sm);
+}
+
+.secureContainer svg {
+  width: 14px;
+  height: 14px;
+}
+
+.secureContainer span {
+  font-size: 11px;
+}

@@ -1,0 +1,238 @@
+.main {
+  min-height: 100vh;
+  position: relative;
+  background-color: #F8FAFC; /* Slate 50 - Very light slate background */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px; /* Space for fixed bottom bar */
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  margin-top: 56px; /* Space for TopBar */
+  gap: var(--spacing-lg);
+}
+
+/* Map Card */
+.mapCard {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  border: 1px solid #E2E8F0;
+}
+
+.mapPlaceholder {
+  height: 160px;
+  background: linear-gradient(135deg, #A7F3D0 0%, #E6F4EA 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Drawing some fake map lines */
+.mapPlaceholder::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.4) 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,0.4) 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+.mapPin {
+  width: 48px;
+  height: 48px;
+  background-color: #064E3B; /* Very dark green */
+  color: white;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
+}
+
+.mapPin svg {
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+}
+
+.mapActionRow {
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mapActionText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mapActionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.mapActionSubtitle {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-tertiary);
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  border: 1px solid #D1D5DB; /* Gray 300 */
+  border-radius: var(--radius-md);
+  padding: 14px var(--spacing-md);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background-color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #9CA3AF; /* Gray 400 */
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.textarea {
+  resize: none;
+  padding-top: var(--spacing-md);
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+/* Select invalid (placeholder) styling */
+.select:invalid {
+  color: #9CA3AF;
+}
+
+/* Pill Selector */
+.pillGroupWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--spacing-sm);
+}
+
+.pillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #D1D5DB;
+  background-color: white;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pill svg {
+  width: 14px;
+  height: 14px;
+}
+
+.pillActive {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: #F0FDF4; /* Green 50 */
+  font-weight: 600;
+}
+
+/* Bottom Action Bar */
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+.submitButton {
+  background-color: #064E3B; /* Very dark green */
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.1s ease;
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}

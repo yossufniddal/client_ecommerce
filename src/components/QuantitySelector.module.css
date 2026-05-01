@@ -1,0 +1,83 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: transparent;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wrapper.expanded {
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 1px #e5e7eb, var(--shadow-level-1);
+}
+
+.collapsibleContent {
+  display: flex;
+  align-items: center;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+.wrapper.expanded .collapsibleContent {
+  width: 64px;
+  opacity: 1;
+}
+
+.decreaseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text-secondary);
+  background: transparent;
+  transition: all 0.2s ease;
+  border: none;
+  padding: 0;
+}
+
+.increaseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+  transition: all 0.2s ease;
+  border: none;
+  padding: 0;
+  box-shadow: var(--shadow-level-1);
+}
+
+.decreaseButton:hover {
+  background-color: var(--color-tertiary);
+}
+
+.increaseButton:hover {
+  background-color: var(--color-primary);
+}
+
+.decreaseButton svg, .increaseButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.quantity {
+  margin: 0 var(--spacing-xs);
+  font-weight: 700;
+  font-size: 14px;
+  min-width: 24px;
+  text-align: center;
+  color: var(--color-text-primary);
+}
